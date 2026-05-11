@@ -1,13 +1,6 @@
 # Blog Post Template
 
-A full-stack template for building and serving modern blog posts. This project includes a React frontend and an Express.js backend.
-
-## Project Structure
-
-This repository is split into two main directories:
-
-- **`/frontend`**: The user-facing application built with React and Vite.
-- **`/server`**: The backend server built with Node.js and Express.
+A modern, responsive template for building and serving blog posts. This project is built using React and Vite.
 
 ## Getting Started
 
@@ -20,37 +13,40 @@ Make sure you have Node.js and npm installed on your machine.
 ### Installation
 
 1. **Clone the repository** (if you haven't already).
-2. **Install frontend dependencies:**
+2. **Navigate to the frontend directory:**
    ```bash
    cd frontend
-   npm install
    ```
-3. **Install server dependencies:**
+3. **Install dependencies:**
    ```bash
-   cd ../server
    npm install
    ```
 
 ### Running the Application
 
-You'll need to run both the frontend and the server concurrently for full functionality.
+To run the application locally in development mode:
 
-**Terminal 1 (Backend):**
 ```bash
-cd server
-node index.js
-```
-*(Note: If you have configured a dev script like `nodemon`, use that instead).*
-
-**Terminal 2 (Frontend):**
-```bash
-cd frontend
 npm run dev
 ```
 
-The frontend will typically run on `http://localhost:5173/` by default (handled by Vite), and it will communicate with your backend server.
+The app will typically be available on `http://localhost:5173/`.
+
+### Building for Production
+
+To build the static files for deployment:
+
+```bash
+npm run build
+```
+This will generate a `dist` folder containing your optimized, production-ready static files.
+
+## Deployment
+
+Since this is now a purely static frontend, to deploy to platforms like Vercel or Netlify, make sure you configure your deployment settings to use the `frontend` directory as your "Root Directory" so the platform can find your `package.json`.
 
 ## Technologies Used
 
-- **Frontend:** React 19, Vite, ESLint
-- **Backend:** Node.js, Express, CORS
+- React 19
+- Vite
+- ESLint
