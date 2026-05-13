@@ -44,14 +44,39 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbars site-wide; one document scroll (wheel / touch / keys still work). */
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
 * {
   box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
-  overflow-x: hidden;
+  /* Do not set overflow-x to hidden/clip/auto here — it breaks descendant position:sticky */
   scroll-behavior: smooth;
 }
 
